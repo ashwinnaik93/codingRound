@@ -1,1 +1,4 @@
-Initial setup complete.
+- Initial setup complete.
+- Converted into TestNG to create xml file.
+- Commented “import org.openqa.selenium.support.ui.Select”, due to unused package in FlightBookingTest.java class.
+- Declaring the webdriver after setting the Chrome driver.

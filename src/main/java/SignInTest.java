@@ -1,3 +1,4 @@
+package scripts;
 import com.sun.javafx.PlatformUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,13 +8,15 @@ import org.testng.annotations.Test;
 
 public class SignInTest {
 
-    WebDriver driver = new ChromeDriver();
+	//Only initializing the Webdriver.
+    WebDriver driver;// = new ChromeDriver();
 
     @Test
     public void shouldThrowAnErrorIfSignInDetailsAreMissing() {
 
         setDriverPath();
-
+        driver = new ChromeDriver(); //Declaring the webdriver after setting the Chrome driver. 
+        
         driver.get("https://www.cleartrip.com/");
         waitFor(2000);
 
@@ -36,6 +39,8 @@ public class SignInTest {
     }
 
     private void setDriverPath() {
+    	//Accessed cromedriver internally from local driver.
+    	//System.setProperty("webdriver.chrome.driver", "/Users/ashwinnaik/Documents/CodingRound/codingRound/chromedriver");
         if (PlatformUtil.isMac()) {
             System.setProperty("webdriver.chrome.driver", "chromedriver");
         }

@@ -1,3 +1,4 @@
+package scripts;
 import com.sun.javafx.PlatformUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +9,8 @@ import org.testng.annotations.Test;
 
 public class HotelBookingTest {
 
-    WebDriver driver = new ChromeDriver();
+	//Only initializing the Webdriver.
+    WebDriver driver;// = new ChromeDriver();
 
     @FindBy(linkText = "Hotels")
     private WebElement hotelLink;
@@ -25,7 +27,7 @@ public class HotelBookingTest {
     @Test
     public void shouldBeAbleToSearchForHotels() {
         setDriverPath();
-
+        driver = new ChromeDriver(); //Declaring the webdriver after setting the Chrome driver. 
         driver.get("https://www.cleartrip.com/");
         hotelLink.click();
 
@@ -39,6 +41,8 @@ public class HotelBookingTest {
     }
 
     private void setDriverPath() {
+    	//Accessed cromedriver internally from local driver.
+    	//System.setProperty("webdriver.chrome.driver", "/Users/ashwinnaik/Documents/CodingRound/codingRound/chromedriver");
         if (PlatformUtil.isMac()) {
             System.setProperty("webdriver.chrome.driver", "chromedriver");
         }
