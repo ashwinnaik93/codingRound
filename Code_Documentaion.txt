@@ -1,4 +1,20 @@
 - Initial setup complete.
 - Converted into TestNG to create xml file.
-- Commented ‚Äúimport org.openqa.selenium.support.ui.Select‚Äù, due to unused package in FlightBookingTest.java class.
 - Declaring the webdriver after setting the Chrome driver.
+- Updated the Chromedriver.exe file.
+
+SignInTest.java
+- Switching to the different frame using switchTo() method.
+
+FlightBookingTest.java
+- Commented ìimport org.openqa.selenium.support.ui.Selectî, due to unused package in FlightBookingTest.java class.
+- Created the constructor of SignInTest class.
+- Corrected the spell of "toTag" to "ToTag".
+- Changing to the value of xpath to valid date.
+- Removed setDriverPath() method, and now accessing from the SignInTest class.
+
+HotelBookingTest.java
+- Created the constructor of SignInTest class.
+- Used initElements() method to initialize web elements.
+- Written code for selecting the first item from the destination auto complete list.
+- Written code for selecting Check-in and Check-out date.
